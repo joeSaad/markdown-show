@@ -19,3 +19,17 @@ html, body, section, .full-height {
     overflow: auto;
     border-left: 1px solid black;
 }
+
+#toolbar{
+
+}
+
+.bold{
+    font-weight: bold;
+}
+.italics{
+    font-style: italic;
+}
+.strike-through{
+    text-decoration: line-through;
+}

@@ -14,16 +14,19 @@
     <section class="row">
     	<div id="toolbar">
     		<select name="headers" id="headers">
-    			<option value="1">Header 1</option>
+    			<option value="0">Headers</option>
+                <option value="1">Header 1</option>
     			<option value="2">Header 2</option>
     			<option value="3">Header 3</option>
     			<option value="4">Header 4</option>
     			<option value="5">Header 5</option>
     			<option value="6">Header 6</option>
     		</select>
-    		<button type="button" class="bold" id="bbbold">B</button>
-    		<button type="button" class="italic">I</button>
-    		<button type="button" class="italic">I</button>
+    		<button type="button" class="bold" id="v-bold">B</button>
+    		<button type="button" class="italics" id="v-italics">I</button>
+    		<button type="button" class="strike-through" id="v-strikeThrough">S</button>
+            <button type="button" class="code bold" id="v-code">&lt;&gt;</button>
+
 
     	</div>
         <textarea class="col-md-6 full-height" id="pad">Write your text here..</textarea>
@@ -31,7 +34,9 @@
     </section>
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdn.rawgit.com/showdownjs/showdown/1.0.2/dist/showdown.min.js"></script>
+    <!-- <script src="https://cdn.rawgit.com/showdownjs/showdown/1.0.2/dist/showdown.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.7.1/showdown.min.js"></script>
+
     <script src="javascripts/script.js"></script>
 
 </body>

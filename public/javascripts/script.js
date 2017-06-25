@@ -32,23 +32,40 @@ function wrapIt(w) {
     pad.value = pad.value.insertAt(pad.selectionEnd, w).insertAt(pad.selectionStart, w);
 }
 
+function prefixIt(w){
+    pad.value = pad.value.insertAt(pad.selectionStart, w);
+}
 
-$('#bbbold').click(function() {
-    var wrapper = "**";
+
+$('#v-bold').click(function() {
+    let wrapper = "**";
     wrapIt(wrapper);
-    //pad.value = pad.value.insertAt(pad.selectionEnd, wrapper).insertAt(pad.selectionStart, wrapper);
-
 })
+
+$('#v-italics').click(function(){
+    let wrapper = "*";
+    wrapIt(wrapper);
+})
+
+$('#v-strikeThrough').click(function(){
+    let wrapper = "~~";
+    wrapIt(wrapper);
+})
+
+$('#v-code').click(function(){
+    let wrapper = "`";
+    wrapIt(wrapper);
+})
+
 
 $('#headers').change(function() {
     console.log($(this).val());
-    var headingType = $(this).val();
-    var wrapper = "";
+    const headingType = $(this).val();
+    let wrapper = "";
     for (var i = 0; i < headingType; i++) {
         wrapper = wrapper + "#";
     }
-    wrapIt(wrapper);
-    //pad.value = pad.value.insertAt(pad.selectionEnd, wrapper).insertAt(pad.selectionStart, wrapper);
+    prefixIt(wrapper);
 })
 
 
