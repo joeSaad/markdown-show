@@ -7,18 +7,25 @@ window.onload = function() {
         var markdownText = pad.value;
         html = converter.makeHtml(markdownText);
         markdownArea.innerHTML = html;
+
+        $('pre code').each(function(i, block) {
+            hljs.highlightBlock(block);
+        });
     };
 
     pad.addEventListener('input', convertTextAreaToMarkdown);
 
     convertTextAreaToMarkdown();
 
-    $('#toolbar button').click(function(){
-      convertTextAreaToMarkdown();  
-    })    
+    $('#toolbar button').click(function() {
+        convertTextAreaToMarkdown();
+        $('pre code').each(function(i, block) {
+            hljs.highlightBlock(block);
+        });
+    })
 
-    $('#toolbar select').change(function(){
-        convertTextAreaToMarkdown();  
+    $('#toolbar select').change(function() {
+        convertTextAreaToMarkdown();
     })
 
 };
@@ -32,8 +39,12 @@ function wrapIt(w) {
     pad.value = pad.value.insertAt(pad.selectionEnd, w).insertAt(pad.selectionStart, w);
 }
 
-function prefixIt(w){
+function prefixIt(w) {
     pad.value = pad.value.insertAt(pad.selectionStart, w);
+}
+
+function wrapAround(l, r) {
+    pad.value = pad.value.insertAt(pad.selectionEnd, r).insertAt(pad.selectionStart, l);
 }
 
 
@@ -42,21 +53,36 @@ $('#v-bold').click(function() {
     wrapIt(wrapper);
 })
 
-$('#v-italics').click(function(){
+$('#v-italics').click(function() {
     let wrapper = "*";
     wrapIt(wrapper);
 })
 
-$('#v-strikeThrough').click(function(){
+$('#v-strikeThrough').click(function() {
     let wrapper = "~~";
     wrapIt(wrapper);
 })
 
-$('#v-code').click(function(){
+$('#v-code').click(function() {
     let wrapper = "`";
     wrapIt(wrapper);
 })
 
+$('#v-image').click(function() {
+    let imageUrl = prompt('Image Url');
+    //![alt text](url "Logo Title Text 1")
+    wrapAround(`![`, `](${imageUrl})`);
+})
+
+$('#v-link').click(function() {
+    let linkUrl = prompt('Link Url');
+    wrapAround(`[`, `](${linkUrl})`);
+})
+
+$('#v-coder').click(function() {
+    let codeType = prompt('Code Type');
+    wrapAround('```'+codeType+'\n', '\n```');
+})
 
 $('#headers').change(function() {
     console.log($(this).val());
@@ -67,5 +93,3 @@ $('#headers').change(function() {
     }
     prefixIt(wrapper);
 })
-
-

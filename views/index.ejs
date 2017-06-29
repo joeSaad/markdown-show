@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Markdown Editor</title>
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
         <link rel="stylesheet" href="stylesheets/style.css">
         <link rel="author" href="humans.txt">
     </head>
@@ -26,16 +27,28 @@
     		<button type="button" class="italics" id="v-italics">I</button>
     		<button type="button" class="strike-through" id="v-strikeThrough">S</button>
             <button type="button" class="code bold" id="v-code">&lt;&gt;</button>
+            <button type="button" class="coder" id="v-coder">coder</button>
+            <button type="button" class="image" id="v-image">Image</button>
+            <button type="button" class="image" id="v-link">Link</button>
 
 
     	</div>
-        <textarea class="col-md-6 full-height" id="pad">Write your text here..</textarea>
+        <textarea class="col-md-6 full-height" id="pad">Write your text here..
+```javascript
+console.log('test')
+```
+        </textarea>
         <div class="col-md-6 full-height" id="markdown"></div>
     </section>
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- <script src="https://cdn.rawgit.com/showdownjs/showdown/1.0.2/dist/showdown.min.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.7.1/showdown.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+    <!-- <script src="../node_modules/showdown-prettify/dist/showdown-prettify.min.js"></script> -->
 
     <script src="javascripts/script.js"></script>
 
