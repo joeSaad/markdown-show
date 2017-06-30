@@ -20,8 +20,20 @@ html, body, section, .full-height {
     border-left: 1px solid black;
 }
 
-#toolbar{
+.paddedTop{
+    padding-top: 50px;
+}
 
+#toolbar{
+    background: #6f5b5b;
+    padding: 10px;
+    position: fixed;
+    width: 50%;
+    font-family: sans-serif;
+}
+
+select{
+    font-weight: bold;
 }
 
 .bold{
