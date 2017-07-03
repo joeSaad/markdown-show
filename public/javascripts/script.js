@@ -1,5 +1,5 @@
 window.onload = function() {
-    var converter = new showdown.Converter();
+    var converter = new showdown.Converter({'strikethrough': true, 'tables': true});
     var pad = document.getElementById('pad');
     var markdownArea = document.getElementById('markdown');
 
