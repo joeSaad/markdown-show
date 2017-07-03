@@ -85,18 +85,26 @@ $('#v-coder').click(function() {
 })
 
 $('#v-unorderedList').click(function(){
-        
-    var q = pad.value.substr(pad.selectionStart).match(/\n/g)||[]
 
     var textArea = pad.value;
     var selectPart = textArea.substring(pad.selectionStart, pad.selectionEnd);
 
     var tempSelectPart = '- '+selectPart;
     var finalSelectPart = tempSelectPart.replace(/\n/g, '\n- ');
+    pad.value = pad.value.replace(selectPart, finalSelectPart);
+})
+
+$('#v-orderedList').click(function(){  
+
+    var textArea = pad.value;
+    var selectPart = textArea.substring(pad.selectionStart, pad.selectionEnd);
+
+    var tempSelectPart = '1. '+selectPart;
+    var arrayed = selectPart.split('\n');
+    var finalSelectPart = arrayed.map((x,i)=> `\n${i+1}. ${x}`);
 
     pad.value = pad.value.replace(selectPart, finalSelectPart);
     
-
 })
 
 $('#headers').change(function() {
