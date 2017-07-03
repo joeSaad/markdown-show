@@ -84,6 +84,21 @@ $('#v-coder').click(function() {
     wrapAround('```'+codeType+'\n', '\n```');
 })
 
+$('#v-unorderedList').click(function(){
+        
+    var q = pad.value.substr(pad.selectionStart).match(/\n/g)||[]
+
+    var textArea = pad.value;
+    var selectPart = textArea.substring(pad.selectionStart, pad.selectionEnd);
+
+    var tempSelectPart = '- '+selectPart;
+    var finalSelectPart = tempSelectPart.replace(/\n/g, '\n- ');
+
+    pad.value = pad.value.replace(selectPart, finalSelectPart);
+    
+
+})
+
 $('#headers').change(function() {
     console.log($(this).val());
     const headingType = $(this).val();
