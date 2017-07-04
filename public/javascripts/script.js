@@ -1,5 +1,8 @@
 window.onload = function() {
-    var converter = new showdown.Converter({'strikethrough': true, 'tables': true});
+    var converter = new showdown.Converter({
+        'strikethrough': true, 
+        'tables': true, 
+        'tasklists': true});
     var pad = document.getElementById('pad');
     var markdownArea = document.getElementById('markdown');
 
@@ -106,6 +109,14 @@ $('#v-orderedList').click(function(){
     pad.value = pad.value.replace(selectPart, finalSelectPart);
     
 })
+
+$('#v-hr-link').click(function(){
+    var line = '---\n';
+    prefixIt(line);
+    pad.focus();
+})
+
+
 
 $('#headers').change(function() {
     console.log($(this).val());
