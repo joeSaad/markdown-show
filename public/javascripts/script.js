@@ -126,6 +126,11 @@ $('#v-hr-link').click(function(){
     pad.focus();
 })
 
+$('#v-bq').click(function(){
+    var bq = ' > ';
+    prefixIt(bq);
+    pad.focus();
+})
 
 
 $('#headers').change(function() {
