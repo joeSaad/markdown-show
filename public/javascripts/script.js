@@ -110,6 +110,16 @@ $('#v-orderedList').click(function(){
     
 })
 
+$('#v-tasklist').click(function(){
+    var textArea = pad.value;
+    var selectPart = textArea.substring(pad.selectionStart, pad.selectionEnd);
+
+    var tempSelectPart = '- [ ] '+selectPart;
+    var finalSelectPart = tempSelectPart.replace(/\n/g, '\n- [ ] ');
+    pad.value = pad.value.replace(selectPart, finalSelectPart);  
+})
+
+
 $('#v-hr-link').click(function(){
     var line = '---\n';
     prefixIt(line);
