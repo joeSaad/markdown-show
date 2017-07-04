@@ -132,6 +132,20 @@ $('#v-bq').click(function(){
     pad.focus();
 })
 
+$('#v-table').click(function(){
+    var s = '\xa0\xa0\xa0\xa0\xa0';
+    var defaultTable = `|${s}Table${s}|${s}Are${s}\xa0\xa0|\n|${s}-----${s}|${s}---${s}\xa0\xa0|`;
+    prefixIt(defaultTable);
+    pad.focus();
+})
+
+$('#v-row').click(function(){
+    var s = '\xa0\xa0\xa0\xa0\xa0';
+    var rowTable = `|${s}${s}${s}|${s}${s}${s}|\n`;
+    prefixIt(rowTable);
+    pad.focus();
+})
+
 
 $('#headers').change(function() {
     console.log($(this).val());
