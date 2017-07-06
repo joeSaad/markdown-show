@@ -1,6 +1,10 @@
-html, body, section, .full-height {
+html, body, section {
     height: 100%;
 } 
+
+.main-height{
+    height: 98%;
+}
 
 
 #pad{
@@ -58,4 +62,11 @@ table{
 
 th,td{
     padding: 4px;
+}
+
+.footer {
+    background: #e5e5ec;
+    clear: both;
+    padding: 3px 15px;
+    font-size: 0.8em;
 }
