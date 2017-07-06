@@ -1,20 +1,21 @@
 <!doctype html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="description" content="your ultimate markdown editor">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Markdown Editor</title>
-        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
-        <link rel="stylesheet" href="stylesheets/style.css">
-        <link rel="author" href="humans.txt">
-    </head>
-    <body class="container-fluid">
 
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="favorite markdown">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mdpad - your favorite markdown editor</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <link rel="author" href="https://github.com/joeSaad">
+</head>
+
+<body class="container-fluid">
     <div class="row">
-                <div id="toolbar">
+        <div id="toolbar">
             <select name="headers" id="headers">
                 <option value="0">Headers</option>
                 <option value="1">Header 1</option>
@@ -32,44 +33,22 @@
             <button type="button" class="image" id="v-image"><i class="fa fa-picture-o" title="Image"></i></button>
             <button type="button" class="image" id="v-link"><i class="fa fa-link"></i> </button>
             <button type="button" class="image" id="v-unorderedList"> <i class="fa fa-list-ul"></i> </button>
-
             <button type="button" class="image" id="v-orderedList"> <i class="fa fa-list-ol"></i> </button>
-
             <button type="button" class="image" id="v-tasklist"> <i class="fa fa-check-square-o"></i> </button>
-
-            <button type="button" class="image" id="v-bq"> <i class="fa fa-quote-left"></i> </button>    
+            <button type="button" class="image" id="v-bq"> <i class="fa fa-quote-left"></i> </button>
             <button type="button" class="image" id="v-table"> <i class="fa fa-table"></i> </button>
             <button type="button" class="image" id="v-row"> <i class="fa fa-align-justify"></i> </button>
-        
             <button type="button" class="image" id="v-hr-link"> hr </button>
-
-
-
-
         </div>
     </div>
-
     <section class="row paddedTop">
-
-        <textarea class="col-md-6 full-height" id="pad">Write your text here..
-```javascript
-console.log('test')
-```
-        </textarea>
+        <textarea class="col-md-6 full-height" id="pad">#Markdown Friendly Way</textarea>
         <div class="col-md-6 full-height" id="markdown"></div>
     </section>
-
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <!-- <script src="https://cdn.rawgit.com/showdownjs/showdown/1.0.2/dist/showdown.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.7.1/showdown.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-
-
-
-
-    <!-- <script src="../node_modules/showdown-prettify/dist/showdown-prettify.min.js"></script> -->
-
     <script src="javascripts/script.js"></script>
-
 </body>
+
 </html>
