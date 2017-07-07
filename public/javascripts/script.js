@@ -40,14 +40,17 @@ String.prototype.insertAt = function(index, string) {
 
 function wrapIt(w) {
     pad.value = pad.value.insertAt(pad.selectionEnd, w).insertAt(pad.selectionStart, w);
+    pad.focus();
 }
 
 function prefixIt(w) {
     pad.value = pad.value.insertAt(pad.selectionStart, w);
+    pad.focus();
 }
 
 function wrapAround(l, r) {
     pad.value = pad.value.insertAt(pad.selectionEnd, r).insertAt(pad.selectionStart, l);
+    pad.focus();
 }
 
 
@@ -123,28 +126,48 @@ $('#v-tasklist').click(function(){
 $('#v-hr-link').click(function(){
     var line = '---\n';
     prefixIt(line);
-    pad.focus();
 })
 
 $('#v-bq').click(function(){
     var bq = ' > ';
     prefixIt(bq);
-    pad.focus();
 })
 
 $('#v-table').click(function(){
     var s = '\xa0\xa0\xa0\xa0\xa0';
     var defaultTable = `|${s}Table${s}|${s}Are${s}\xa0\xa0|\n|${s}-----${s}|${s}---${s}\xa0\xa0|`;
     prefixIt(defaultTable);
-    pad.focus();
 })
 
 $('#v-row').click(function(){
     var s = '\xa0\xa0\xa0\xa0\xa0';
     var rowTable = `|${s}${s}${s}|${s}${s}${s}|\n`;
     prefixIt(rowTable);
-    pad.focus();
 })
+
+$('#v-save').click(function(){
+    var textToSave = document.getElementById("pad").value;
+    var textToSaveAsBlob = new Blob([textToSave], {type:"text/plain"});
+    var textToSaveAsURL = window.URL.createObjectURL(textToSaveAsBlob);
+    var fileNameToSaveAs = $('#markdown h1:first-child').text().replace(/\s/g,'_')+'.md';
+    //var fileNameToSaveAs = 'filename.md';
+ 
+    var downloadLink = document.createElement("a");
+    downloadLink.download = fileNameToSaveAs;
+    downloadLink.innerHTML = "Download File";
+    downloadLink.href = textToSaveAsURL;
+    downloadLink.onclick = destroyClickedElement;
+    downloadLink.style.display = "none";
+    document.body.appendChild(downloadLink);
+    downloadLink.click();
+    
+})
+
+function destroyClickedElement(event)
+{
+    document.body.removeChild(event.target);
+}
+ 
 
 
 $('#headers').change(function() {
