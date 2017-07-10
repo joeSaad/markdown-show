@@ -91,25 +91,30 @@ $('#v-coder').click(function() {
 })
 
 $('#v-unorderedList').click(function(){
-
     var textArea = pad.value;
     var selectPart = textArea.substring(pad.selectionStart, pad.selectionEnd);
 
     var tempSelectPart = '- '+selectPart;
     var finalSelectPart = tempSelectPart.replace(/\n/g, '\n- ');
     pad.value = pad.value.replace(selectPart, finalSelectPart);
+    pad.focus();
 })
 
-$('#v-orderedList').click(function(){  
-
+$('#v-orderedList').click(function(){ 
     var textArea = pad.value;
     var selectPart = textArea.substring(pad.selectionStart, pad.selectionEnd);
 
-    var tempSelectPart = '1. '+selectPart;
     var arrayed = selectPart.split('\n');
-    var finalSelectPart = arrayed.map((x,i)=> `\n${i+1}. ${x}`);
+    //var finalSelectPart = arrayed.map((x,i)=> `\n${i+1}. ${x}`);
+    var finalSelectPart = '';
+
+    for(var i=0; i<arrayed.length; i++){
+        var item = i+1 + '. ' + arrayed[i] + '\n';
+        finalSelectPart = finalSelectPart + item;    
+    }
 
     pad.value = pad.value.replace(selectPart, finalSelectPart);
+    pad.focus();
     
 })
 
@@ -120,6 +125,7 @@ $('#v-tasklist').click(function(){
     var tempSelectPart = '- [ ] '+selectPart;
     var finalSelectPart = tempSelectPart.replace(/\n/g, '\n- [ ] ');
     pad.value = pad.value.replace(selectPart, finalSelectPart);  
+    pad.focus();
 })
 
 
@@ -150,7 +156,6 @@ $('#v-save').click(function(){
     var textToSaveAsBlob = new Blob([textToSave], {type:"text/plain"});
     var textToSaveAsURL = window.URL.createObjectURL(textToSaveAsBlob);
     var fileNameToSaveAs = $('#markdown h1:first-child').text().replace(/\s/g,'_')+'.md';
-    //var fileNameToSaveAs = 'filename.md';
  
     var downloadLink = document.createElement("a");
     downloadLink.download = fileNameToSaveAs;
@@ -163,8 +168,7 @@ $('#v-save').click(function(){
     
 })
 
-function destroyClickedElement(event)
-{
+function destroyClickedElement(event){
     document.body.removeChild(event.target);
 }
  
