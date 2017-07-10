@@ -183,3 +183,8 @@ $('#headers').change(function() {
     }
     prefixIt(wrapper);
 })
+
+
+$('#pad').on('scroll', function () {
+    $('#markdown').scrollTop($(this).scrollTop());
+});
