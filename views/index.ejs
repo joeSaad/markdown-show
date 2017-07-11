@@ -3,44 +3,51 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="description" content="favorite markdown">
+    <meta name="description" content="markdown made easy">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Mdpad - your favorite markdown editor</title>
+    <title>mdPad - markdown made easy</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
     <link rel="stylesheet" href="stylesheets/style.css">
     <link rel="author" href="https://github.com/joeSaad">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 </head>
 
 <body class="container-fluid">
     <div class="content">
         <div class="row">
             <div id="toolbar">
-                <select name="headers" id="headers">
-                    <option value="0">Headers</option>
-                    <option value="1">Header 1</option>
-                    <option value="2">Header 2</option>
-                    <option value="3">Header 3</option>
-                    <option value="4">Header 4</option>
-                    <option value="5">Header 5</option>
-                    <option value="6">Header 6</option>
-                </select>
-                <button type="button" class="bold" id="v-bold">B</button>
-                <button type="button" class="italics" id="v-italics">I</button>
-                <button type="button" class="strike-through" id="v-strikeThrough">S</button>
-                <button type="button" class="code bold" id="v-code"> <i class="fa fa-code"></i> </button>
-                <button type="button" class="coder" id="v-coder"> <i class="fa fa-file-code-o"></i> </button>
-                <button type="button" class="image" id="v-image"><i class="fa fa-picture-o" title="Image"></i></button>
-                <button type="button" class="image" id="v-link"><i class="fa fa-link"></i> </button>
-                <button type="button" class="image" id="v-unorderedList"> <i class="fa fa-list-ul"></i> </button>
-                <button type="button" class="image" id="v-orderedList"> <i class="fa fa-list-ol"></i> </button>
-                <button type="button" class="image" id="v-tasklist"> <i class="fa fa-check-square-o"></i> </button>
-                <button type="button" class="image" id="v-bq"> <i class="fa fa-quote-left"></i> </button>
-                <button type="button" class="image" id="v-table"> <i class="fa fa-table"></i> </button>
-                <button type="button" class="image" id="v-row"> <i class="fa fa-align-justify"></i> </button>
-                <button type="button" class="image" id="v-hr-link"> hr </button>
-                <button class="image" type="button" id="v-save"> <i class="fa fa-floppy-o"></i> </button>
+                <a href="/" class="logo">
+                <img src="../images/logo.png" />
+                <!--mdPad-->
+                </a>
+<div class="toolbar-wrapper">
+    <select name="headers" id="headers">
+        <option value="0">Headers</option>
+        <option value="1">Header 1</option>
+        <option value="2">Header 2</option>
+        <option value="3">Header 3</option>
+        <option value="4">Header 4</option>
+        <option value="5">Header 5</option>
+        <option value="6">Header 6</option>
+    </select>
+    <button type="button" class="bold" id="v-bold">B</button>
+    <button type="button" class="italics italics-set" id="v-italics">I</button>
+    <button type="button" class="strike-through" id="v-strikeThrough">S</button>
+    <button type="button" class="code bold" id="v-code">{}</button>
+    <button type="button" class="coder" id="v-coder"> <i class="fa fa-file-code-o"></i> </button>
+    <button type="button" class="image" id="v-image"><i class="fa fa-picture-o" title="Image"></i></button>
+    <button type="button" class="image" id="v-link"><i class="fa fa-link"></i> </button>
+    <button type="button" class="image" id="v-unorderedList"> <i class="fa fa-list-ul"></i> </button>
+    <button type="button" class="image" id="v-orderedList"> <i class="fa fa-list-ol"></i> </button>
+    <button type="button" class="image" id="v-tasklist"> <i class="fa fa-check-square-o"></i> </button>
+    <button type="button" class="image" id="v-bq"> <i class="fa fa-quote-left"></i> </button>
+    <button type="button" class="image" id="v-table"> <i class="fa fa-table"></i> </button>
+    <button type="button" class="image" id="v-row"> <i class="fa fa-align-justify"></i> </button>
+    <button type="button" class="image" id="v-hr-link"> hr </button>
+    <button class="image" type="button" id="v-save"> <i class="fa fa-floppy-o"></i> </button>
+</div>
             </div>
         </div>
         <section class="row paddedTop">

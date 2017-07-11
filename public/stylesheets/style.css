@@ -21,6 +21,7 @@ html, body, section {
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
     box-shadow: none;
+    padding-top: 20px;
 }
 
 #markdown {
@@ -33,15 +34,41 @@ html, body, section {
 }
 
 #toolbar{
-    background: #6f5b5b;
+    background: #334e56;
     padding: 10px;
     position: fixed;
     width: 50%;
     font-family: sans-serif;
 }
 
+a.logo{
+    float: left;
+    margin-right: 5px;
+    font-size: 2em;
+    color: #fff;
+    text-decoration: none;
+}
+
+a.logo img{
+    vertical-align: top;
+}
+
+
+.toolbar-wrapper {
+    background: #fff;
+    padding: 3px 3px 3px 7px;
+    border-radius: 3px;
+    float: left;
+}
 select{
     font-weight: bold;
+}
+button {
+    padding: 5px;
+    margin: -2px;
+    width: 2em;
+    border: 0;
+    background: #fff;
 }
 
 .bold{
@@ -49,6 +76,10 @@ select{
 }
 .italics{
     font-style: italic;
+}
+.italics-set{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.01em;
 }
 .strike-through{
     text-decoration: line-through;
