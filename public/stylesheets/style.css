@@ -36,9 +36,9 @@ html, body, section {
 #toolbar{
     background: #334e56;
     padding: 10px;
-    position: fixed;
-    width: 50%;
     font-family: sans-serif;
+    display: flex;
+    float: left;
 }
 
 a.logo{
