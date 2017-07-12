@@ -1,4 +1,4 @@
-html, body, section {
+html, body {
     height: 100%;
 } 
 
@@ -29,8 +29,8 @@ html, body, section {
     border-left: 1px solid black;
 }
 
-.paddedTop{
-    padding-top: 50px;
+section{
+    height: 87%;
 }
 
 #toolbar{
@@ -100,7 +100,7 @@ th,td{
 
 .footer {
     background: #e5e5ec;
- /*   clear: both;*/
+    clear: both;
     padding: 5px 15px;
     font-size: 0.8em;
     height: 25px;
