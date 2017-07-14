@@ -171,6 +171,14 @@ $('#v-save').click(function(){
 function destroyClickedElement(event){
     document.body.removeChild(event.target);
 }
+
+$('#v-undo').click(function(){
+    document.execCommand('undo')
+})
+
+$('#v-redo').click(function(){
+    document.execCommand('redo')
+})
  
 
 
