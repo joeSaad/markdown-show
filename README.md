@@ -33,3 +33,9 @@ Inspired by searching for many tools to edit markdown in a friendly way, just in
  - [Twitter Bootstrap](http://getbootstrap.com/) - makes everything a little prettier
 - [Fontawesome](http://fontawesome.io/) - use all good icons
 
+##Todo
+- [ ] Enable Publishing to Github using github api
+- [ ] Enable Publishing to Bitbucket via api
+- [ ] Making use of webpack to use bundle instead of CDN (open to discussion)
+- [ ] Enable Gzip Compression on heroku 
+
