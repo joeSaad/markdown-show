@@ -17,11 +17,11 @@ html, body {
     overflow: auto;
     outline: none;
     resize: none;
-
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
     box-shadow: none;
     padding-top: 20px;
+    margin-left: -1px;
 }
 
 #markdown {
@@ -104,4 +104,12 @@ th,td{
     padding: 5px 15px;
     font-size: 0.8em;
     height: 25px;
+}
+
+@media only screen 
+and (max-device-width : 667px){
+    #markdown{
+        border-top: 1px solid #000;
+        border-left: none;
+    }
 }
